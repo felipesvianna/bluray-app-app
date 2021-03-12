@@ -19,7 +19,6 @@ function EditarFilme() {
     const dadosFilme = data.state;
 
     function excluirTitulo() {
-        // Excluir titulo
         setExibirModal(false);
         excluirFilme(dadosFilme);
         setRedirecionar(true);

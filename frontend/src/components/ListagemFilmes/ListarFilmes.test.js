@@ -1,5 +1,3 @@
-import { shallow } from 'enzyme';
-
 import { wrapperFilmesContext } from '../../util/testHelper';
 import ListarFilmes from './ListarFilmes';
 

@@ -64,10 +64,8 @@ export default (state, action) => {
         case BUSCAR_FILMES:
             return {
                 ...state,
-                tituloTabela: 'Resultado da busca para "' + action.payload + "\"",
-                listaDeFilmes: state.listaDeFilmes.filter((filme) =>
-                    filme.titulo.includes(action.payload)
-                ),
+                tituloTabela: 'Resultado da busca para "' + action.payload.stringBusca + "\"",
+                listaDeFilmes: action.payload.filmesEncontrados
             };
         default:
             return state;

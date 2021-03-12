@@ -1,5 +1,3 @@
-import { shallow } from 'enzyme';
-
 import FlashMensagem from './FlashMensagem';
 
 import { wrapperFilmesContext } from '../util/testHelper';

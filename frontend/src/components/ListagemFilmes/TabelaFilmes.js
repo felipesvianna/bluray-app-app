@@ -51,7 +51,7 @@ function TabelaFilmes() {
                                 </thead>
 
                                 <tbody className="bg-white divide-y divide-gray-200">
-                                    {listaDeFilmes.map((titulo) => <ItemListaFilme key={titulo.id} dadosFilme={titulo} />)}
+                                    {listaDeFilmes ? listaDeFilmes.map((titulo) => <ItemListaFilme key={titulo.id} dadosFilme={titulo} />) : null}
                                 </tbody>
                             </table>
                         </div>

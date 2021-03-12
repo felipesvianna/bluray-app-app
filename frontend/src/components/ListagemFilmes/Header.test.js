@@ -1,9 +1,4 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { BrowserRouter, Route } from "react-router-dom";
-
-import FilmesState from '../../context/FilmesState';
-import FilmesContext from '../../context/FilmesContext';
 
 import { wrapperFilmesContext } from '../../util/testHelper';
 
@@ -22,7 +17,6 @@ describe('Componente Header', () => {
     });
 
     test('Se botao Adicionar Filme existe', () => {
-        console.log(wrapper);
         expect(wrapper.find('#btn-adicionar-filme').length).toEqual(1);
     });
 

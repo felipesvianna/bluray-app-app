@@ -3,6 +3,8 @@ import React, { useReducer } from 'react';
 import filmesReducer from './FilmesReducer';
 import FilmesContext from './FilmesContext';
 
+import createClientAxios from '../util/axios';
+
 import {
     GET_FILMES,
     ADICIONAR_FILME,
@@ -27,44 +29,78 @@ function FilmesState(props) {
 
     const [state, dispatch] = useReducer(filmesReducer, initialState);
 
-    console.log('Lista de Filmes: ', state.listaDeFilmes);
+    async function getFilmes() {
+        try {
+            const response = await createClientAxios.get(
+                `/api/${process.env.REACT_APP_API_VERSION}/filmes`
+            );
 
-    function getFilmes() {
-        console.log('Get Filmes');
-        const instanciaDeLista = [
-            { id: 1, titulo: 'The Godfather', anoLancamento: '1972', direcao: 'Francis Ford Coppola', sinopse: 'Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.', avaliacao: 5 },
-            { id: 2, titulo: 'Get Out', anoLancamento: '2017', direcao: 'Jordan Peele', sinopse: 'Chris, an African-American man, decides to visit his Caucasian girlfriends parents during a weekend getaway.Although they seem normal at first, he is not prepared to experience the horrors ahead.', avaliacao: 5 },
-            { id: 3, titulo: 'Avengers: Endgame', anoLancamento: '2019', direcao: 'Joe Russo', sinopse: 'After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.', avaliacao: 4 }
-        ];
-        dispatch({ type: GET_FILMES, payload: instanciaDeLista });
+            dispatch({ type: GET_FILMES, payload: response.data });
+        } catch (err) {
+            dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'erro', mensagem: 'Ocorreu um erro ao listar os filmes!' } });
+        }
     }
 
     function getFilmesDirecao(nomeDirecao) {
-        console.log('Get Filmes Direcao');
         dispatch({ type: BUSCAR_FILMES_DIRETOR, payload: nomeDirecao });
     }
 
-    function buscarFilmesNome(stringBusca) {
-        console.log('Buscar filmes por: ', stringBusca);
-        dispatch({ type: BUSCAR_FILMES, payload: stringBusca });
+    async function buscarFilmesNome(stringBusca) {
+        if (stringBusca) {
+            try {
+                const response = await createClientAxios.get(
+                    `/api/${process.env.REACT_APP_API_VERSION}/filmes/search/${stringBusca}`
+                );
+                dispatch({ type: BUSCAR_FILMES, payload: { stringBusca, filmesEncontrados: response.data } });
+            } catch (err) {
+                dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'erro', mensagem: 'Ocorreu um erro ao buscar os filmes!' } });
+            }
+        }
     }
 
-    function adicionarFilme(dadosFilme) {
-        console.log('Adicionar Filme: ', dadosFilme);
-        dispatch({ type: ADICIONAR_FILME, payload: dadosFilme });
-        dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'sucesso', mensagem: 'Título incluido com sucesso!' } });
+    async function adicionarFilme(dadosFilme) {
+        try {
+            const response = await createClientAxios.post(
+                `/api/${process.env.REACT_APP_API_VERSION}/filmes/`,
+                { filme: dadosFilme }
+            );
+
+            dispatch({ type: ADICIONAR_FILME, payload: response.data });
+            dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'sucesso', mensagem: 'Título incluido com sucesso!' } });
+        } catch (err) {
+            if (err.response.status === 422) {
+                dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'erro', mensagem: 'Dados Inválidos! O título do filme dever ter no mínimo 2 caracteres' } });
+            } else {
+                dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'erro', mensagem: 'Ocorreu um erro ao cadastrar o filme!' } });
+            }
+        }
     }
 
-    function editarDadosFilme(dadosFilme) {
-        console.log('Alterar dados do filme', dadosFilme);
-        dispatch({ type: EDITAR_DADOS_FILME, payload: dadosFilme });
-        dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'sucesso', mensagem: 'Título alterado com sucesso!' } });
+    async function editarDadosFilme(dadosFilme) {
+        try {
+            const response = await createClientAxios.patch(
+                `/api/${process.env.REACT_APP_API_VERSION}/filmes/${dadosFilme.id}`,
+                { filme: dadosFilme }
+            );
+
+            dispatch({ type: EDITAR_DADOS_FILME, payload: response });
+            dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'sucesso', mensagem: 'Título alterado com sucesso!' } });
+        } catch (err) {
+            dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'erro', mensagem: 'Ocorreu um erro ao editar o filme!' } });
+        }
     }
 
-    function excluirFilme(dadosFilme) {
-        console.log('Excluir filme', dadosFilme);
-        dispatch({ type: EXCLUIR_FILME, payload: dadosFilme });
-        dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'sucesso', mensagem: 'Título removido com sucesso!' } });
+    async function excluirFilme(dadosFilme) {
+        try {
+            const response = await createClientAxios.delete(
+                `/api/${process.env.REACT_APP_API_VERSION}/filmes/${dadosFilme.id}`
+            );
+
+            dispatch({ type: EXCLUIR_FILME, payload: response });
+            dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'sucesso', mensagem: 'Título removido com sucesso!' } });
+        } catch (err) {
+            dispatch({ type: EXIBIR_FLASH, payload: { tipo: 'erro', mensagem: 'Ocorreu um erro ao excluir o filme!' } });
+        }
     }
 
     function fecharFlash() {

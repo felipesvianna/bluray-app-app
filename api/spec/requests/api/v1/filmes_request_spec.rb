@@ -57,7 +57,7 @@ RSpec.describe 'Filme', type: :request do
       
       context 'quando o campo nome e valido' do
         let(:json) { JSON.parse(response.body, symbolize_names: true) }
-        
+
         before { post api_v1_filmes_path, params: params }
         
         it 'testa se retorna http status 201 se o registro de filme foi criado' do

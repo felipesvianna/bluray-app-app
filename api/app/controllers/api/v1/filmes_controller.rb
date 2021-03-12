@@ -32,7 +32,7 @@ module Api
 
         def search
             @parameter = params[:search].downcase
-            render json: Filme.all.where("titulo LIKE :search COLLATE NOCASE", search: "%#{@parameter}%")
+            render json: Filme.all.where("lower(titulo) LIKE :search COLLATE NOCASE", search: "%#{@parameter}%")
         end
         
         def destroy

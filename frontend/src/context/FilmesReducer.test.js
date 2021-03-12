@@ -171,8 +171,13 @@ describe('Actions de FilmeReducer', () => {
             { id: 3, titulo: 'Avengers: Endgame', anoLancamento: '2019', direcao: 'Joe Russo', sinopse: 'After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.', avaliacao: 4 }
         ];
 
-        // Filme a ser encontrado
-        const payloadTeste = 'Get';
+        const resultadoBusca = [
+            { id: 2, titulo: 'Get Out', anoLancamento: '2017', direcao: 'Jordan Peele', sinopse: 'Chris, an African-American man, decides to visit his Caucasian girlfriends parents during a weekend getaway.Although they seem normal at first, he is not prepared to experience the horrors ahead.', avaliacao: 5 },
+        ];
+
+        const payloadTeste = {
+            stringBusca: 'Get', filmesEncontrados: resultadoBusca
+        };
 
         const initialStateBusca = {
             ...initialStateTest,
@@ -186,10 +191,8 @@ describe('Actions de FilmeReducer', () => {
 
         const stateEsperado = {
             ...initialStateBusca,
-            tituloTabela: 'Resultado da busca para "' + payloadTeste + '"',
-            listaDeFilmes: [
-                { id: 2, titulo: 'Get Out', anoLancamento: '2017', direcao: 'Jordan Peele', sinopse: 'Chris, an African-American man, decides to visit his Caucasian girlfriends parents during a weekend getaway.Although they seem normal at first, he is not prepared to experience the horrors ahead.', avaliacao: 5 },
-            ]
+            tituloTabela: 'Resultado da busca para "' + payloadTeste.stringBusca + '"',
+            listaDeFilmes: payloadTeste.filmesEncontrados
         };
 
         expect(FilmesReducer(initialStateBusca, action)).toEqual(stateEsperado);
