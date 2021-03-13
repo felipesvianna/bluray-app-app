@@ -22,10 +22,10 @@ Esta API utiliza banco de dados [SQLite](https://www.sqlite.org/index.html) para
 ## Utilização
 
 ```bash
-\# comando opicional para gerar entradas na base de dados automaticamente
+# comando opicional para gerar entradas na base de dados automaticamente
 rails db:seed
 
-\# comando para iniciar o servidor da api
+# comando para iniciar o servidor da api
 rails s
 ```
 
