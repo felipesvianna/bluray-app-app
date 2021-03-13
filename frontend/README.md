@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Catálogo de BluRays/DVD's - FrontEnd
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Frontend da aplicação Catálogo de BluRays/DVD's.
 
-## Available Scripts
+A aplicaçao usa Context/Redux para gerenciamento de estado, [DotEnv](https://www.npmjs.com/package/dotenv) para gerenciar variáveis de ambiente, framework [Tailwind CSS](https://tailwindcss.com/) para CSS e utiliza uma API para buscar os dados.
 
-In the project directory, you can run:
+## Pré-requisitos
 
-### `npm start`
+- Ter acesso à API.
+- Se necessário, configurar no arquivo .env o endereço e versão da API. O endereço padrão configurado é http://localhost:3000/.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instalação
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+git clone https://github.com/felipesvianna/bluray-app-app
 
-### `npm test`
+cd frontend && npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Utilização
 
-### `npm run build`
+_\*A porta padrão foi alterada para 3001 ao invés de 3000 no package.json._
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm start
+```
+## Testes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Foram implementados testes unitários e de integração.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+# Comando para executar os testes
+npm test
+```
 
-### `npm run eject`
+## Pacotes NodeJS utilizados no FrontEnd
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- axios
+- dotenv
+- react
+- react-dom
+- react-router-dom
+- react-tooltip
+- jest 
+- babel-jest
+- enzyme
+- @wojtekmaj/enzyme-adapter-react-17
+- tailwind e [suas dependencias](https://tailwindcss.com/docs/guides/create-react-app)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Autor
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Design e Desenvolvimento: **Felipe Vianna** - [Github](https://github.com/felipesvianna)

@@ -33,7 +33,6 @@ describe('Componente FilmesState', () => {
                 axios.get.mockImplementationOnce(() => Promise.resolve(data));
 
                 await expect(axios.get(urlGetFilmes)).resolves.toEqual(data);
-
                 expect(axios.get).toHaveBeenCalledWith(urlGetFilmes);
             });
 

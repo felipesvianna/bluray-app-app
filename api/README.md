@@ -1,24 +1,73 @@
-# README
+# Catálogo de BluRays/DVD's - API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> API para criação, alteração, busca e exclusão de registros de títulos do banco de dados.
 
-Things you may want to cover:
+A aplicaçao foi desenvolvida com o framework [Ruby On Rails](https://rubyonrails.org/) e utiliza banco de dados [SQLite](https://www.sqlite.org/index.html) para armazenamento.
 
-* Ruby version
+## Pré-requisitos
 
-* System dependencies
+- Ter [Ruby On Rails](https://gorails.com/setup/ubuntu/20.04#ruby-rbenv) instalado.
 
-* Configuration
+## Instalação
 
-* Database creation
+```bash
+git clone https://github.com/felipesvianna/bluray-app-app
 
-* Database initialization
+cd api && bundle install
+```
+## Banco de Dados
 
-* How to run the test suite
+Esta API utiliza banco de dados [SQLite](https://www.sqlite.org/index.html) para armazenamento local.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Utilização
 
-* Deployment instructions
+```bash
+\# comando opicional para gerar entradas na base de dados automaticamente
+rails db:seed
 
-* ...
+\# comando para iniciar o servidor da api
+rails s
+```
+
+Endereço padrão para acessar a API: http://localhost:3000
+
+### Endpoins
+
+- GET /api/v1/filmes
+
+Retorna todos os títulos da base de dados
+
+- GET /api/v1/filmes/search/:param 
+
+Retorna os títulos que contenham os caracteres de :param
+
+- POST /api/v1/filmes/
+
+Insere um título na base de dados e retorna o título inserido
+- PATCH /api/v1/filmes/:id
+
+Edita um título na base de dados e retorna o título editado
+
+- DELETE /api/v1/filmes/:id
+
+Exclui um título na base de dados e retorna o título excluido
+
+## Testes
+
+Foram implementados testes unitários e de integração.
+
+```
+# Comando para executar os testes
+rspec
+```
+
+## Gems utilizadas
+
+- rspec-rails
+- shoulda-matchers
+- factory_bot_rails
+- faker
+
+## Autor
+
+- **Felipe Vianna** - [Github](https://github.com/felipesvianna)

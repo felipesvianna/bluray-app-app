@@ -1,0 +1,13 @@
+{
+  "name": "bluray-dvd-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "client": "cd frontend && npm start",
+    "server": "cd api && rails s",
+    "start": "concurrently \"npm run client\" \"npm run server\" "
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0"
+  }
+}
