@@ -15,7 +15,7 @@ As informações dos títulos são armazenadas e obtidas pela API própria. Esta
 
 ## Pré-requisitos
 
-- Ter [Ruby On Rails](https://gorails.com/setup/ubuntu/20.04#ruby-rbenv) instalado. (Rails 6.1.3
+- Ter [Ruby On Rails](https://gorails.com/setup/ubuntu/20.04#ruby-rbenv) instalado. (Esta API usa a versão 6.1.3)
 - Ter [NodeJS](https://nodejs.org/en/) instalado.
 - Ter o pacote [Concurrently](https://www.npmjs.com/package/concurrently) instalado globalmente.
 
