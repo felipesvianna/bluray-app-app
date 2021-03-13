@@ -43,7 +43,7 @@ Acessar http://localhost:3001
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Ruby On Rails](https://rubyonrails.org/)
 
-Mais informações no Readme dos diretórios [api/](https://github.com/felipesvianna/bluray-app-app/tree/master/api) e [frontend/](https://github.com/felipesvianna/bluray-app-app/tree/master/frontend).
+Mais informações no Readme dos diretórios [api/](https://github.com/felipesvianna/bluray-app-app/tree/master/api#cat%C3%A1logo-de-bluraysdvds---api) e [frontend/](https://github.com/felipesvianna/bluray-app-app/tree/master/frontend#cat%C3%A1logo-de-bluraysdvds---frontend).
 
 ## Autor
 
