@@ -51,7 +51,7 @@ Acessar http://localhost:3001
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Ruby On Rails](https://rubyonrails.org/)
 
-# Versões utilizadas do Ruby:
+### Versões utilizadas do Ruby:
 - Ruby 2.7.1
 - Rails 6.1.3
 - Bundler 2.2.14
