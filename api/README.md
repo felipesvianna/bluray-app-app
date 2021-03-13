@@ -11,7 +11,7 @@ A aplicaçao foi desenvolvida utilizando o framework [Ruby On Rails](https://rub
 ## Instalação
 
 ```bash
-git clone https://github.com/felipesvianna/bluray-app-app
+git clone https://github.com/felipesvianna/bluray-dvd-app
 
 cd api && bundle install
 ```
