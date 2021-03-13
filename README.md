@@ -30,11 +30,16 @@ npm install -g concurrently
 ```bash
 git clone https://github.com/felipesvianna/bluray-app-app
 
+cd api && bundle install
+cd..
+cd frontend && npm install
+
 ```
 
 ## Utilização
 
 ```bash
+# Execute o comando abaixo no diretorio raiz do app
 npm start
 ```
 
