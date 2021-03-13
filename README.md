@@ -6,8 +6,11 @@ A aplicação permite cadastrar títulos de filmes, filtrar títulos por quem o 
 As informações dos títulos são armazenadas e obtidas pela API própria. Esta desenvolvida com o framework [Ruby On Rails](https://rubyonrails.org/).
 
 ![Screenshot](docs/screen1.png)
+
 ![Screenshot](docs/screen2.png)
+
 ![Screenshot](docs/screen3.png)
+
 ![Screenshot](docs/screen4.png)
 
 ## Pré-requisitos
