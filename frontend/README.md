@@ -12,7 +12,7 @@ A aplicaçao usa Context/Redux para gerenciamento de estado, [DotEnv](https://ww
 ## Instalação
 
 ```
-git clone https://github.com/felipesvianna/bluray-app-app
+git clone https://github.com/felipesvianna/bluray-dvd-app
 
 cd frontend && npm install
 ```
