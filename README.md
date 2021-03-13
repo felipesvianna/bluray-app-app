@@ -15,7 +15,7 @@ As informações dos títulos são armazenadas e obtidas pela API própria. Esta
 
 ## Pré-requisitos
 
-- Ter [Ruby On Rails](https://gorails.com/setup/ubuntu/20.04#ruby-rbenv) instalado.
+- Ter [Ruby On Rails](https://gorails.com/setup/ubuntu/20.04#ruby-rbenv) instalado. (Rails 6.1.3
 - Ter [NodeJS](https://nodejs.org/en/) instalado.
 - Ter o pacote [Concurrently](https://www.npmjs.com/package/concurrently) instalado globalmente.
 
@@ -50,6 +50,12 @@ Acessar http://localhost:3001
 - [ReactJS](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Ruby On Rails](https://rubyonrails.org/)
+
+# Versões utilizadas do Ruby:
+- Ruby 2.7.1
+- Rails 6.1.3
+- Bundler 2.2.14
+
 
 Mais informações no Readme dos diretórios [api/](https://github.com/felipesvianna/bluray-app-app/tree/master/api#cat%C3%A1logo-de-bluraysdvds---api) e [frontend/](https://github.com/felipesvianna/bluray-app-app/tree/master/frontend#cat%C3%A1logo-de-bluraysdvds---frontend).
 
