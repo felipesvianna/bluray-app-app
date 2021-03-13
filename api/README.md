@@ -2,7 +2,7 @@
 
 > API para criação, alteração, busca e exclusão de registros de títulos do banco de dados.
 
-A aplicaçao foi desenvolvida com o framework [Ruby On Rails](https://rubyonrails.org/) e utiliza banco de dados [SQLite](https://www.sqlite.org/index.html) para armazenamento.
+A aplicaçao foi desenvolvida utilizando o framework [Ruby On Rails](https://rubyonrails.org/) e utiliza banco de dados [SQLite](https://www.sqlite.org/index.html) para armazenamento.
 
 ## Pré-requisitos
 
