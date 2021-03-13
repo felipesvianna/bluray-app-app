@@ -2,7 +2,7 @@
 
 > Aplicativo para ajudar cinéfilos a organizar seus BluRays e DVD's.
 
-A aplicação permite cadastrar títulos de filmes, filtrar títulos por quem o dirigiu, e por nome digitado no campo de busca.
+Aplicação desenvolvida em [ReactJS](https://reactjs.org/), que permite cadastrar títulos de filmes, filtrar títulos por quem o dirigiu, e por nome digitado no campo de busca.
 As informações dos títulos são armazenadas e obtidas pela API própria. Esta desenvolvida com o framework [Ruby On Rails](https://rubyonrails.org/).
 
 ![Screenshot](docs/screen1.png)
