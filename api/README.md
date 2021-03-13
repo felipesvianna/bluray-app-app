@@ -7,7 +7,7 @@ A aplicaçao foi desenvolvida utilizando o framework [Ruby On Rails](https://rub
 ## Pré-requisitos
 
 - Ter [Ruby On Rails](https://gorails.com/setup/ubuntu/20.04#ruby-rbenv) instalado.
-# Versões utilizadas nesta API:
+### Versões utilizadas nesta API:
 - Ruby 2.7.1
 - Rails 6.1.3
 - Bundler 2.2.14
